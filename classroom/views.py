@@ -4,7 +4,7 @@
 # class ClassroomViewSet(viewsets.ModelViewSet):
 #     queryset = Classroom.objects.all()
 #     serializer_class = ClassroomSerializer
-from rest_framework import viewsets
+# from rest_framework import viewsets
 from .serializers import ClassroomSerializer
 from .models import Classroom
 from rest_framework.views import APIView
@@ -23,6 +23,9 @@ class ClassroomListApi(APIView):
     
 class ClassroomAddApi(APIView):
     def post(self, request):
+        # d = request.data
+        # d['room_number'] = '11'  
+        # d['total_seat'] = '20'  
         serializer = ClassroomSerializer(data = request.data)
         if serializer.is_valid():
             serializer.save()
