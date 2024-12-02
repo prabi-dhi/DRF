@@ -11,7 +11,7 @@ class Student(models.Model):
     user = models.ForeignKey(User, on_delete = models.SET_NULL, null= True, blank =True, related_name='students')
     # user = models.OneToOneField(User, on_delete = models.SET_NULL, null= True, blank =True)
 
-    highlighted = models.TextField()
+    # highlighted = models.TextField()
 
     class Meta:
         db_table = 'STUDENT'
