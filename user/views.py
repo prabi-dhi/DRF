@@ -16,7 +16,7 @@ class UserDetail(generics.RetrieveAPIView):
 class ApiRootView(APIView):
     def get(self, request, format=None):
         return Response({
-            'users': reverse('user-list', request=request, format = format),
-            'students': reverse('student-list', request=request, format= format),
-            'classroom': reverse('classroom-list', request= request, format=format),
+            'users': reverse('user-list', request=request),
+            'students': reverse('student-list', request=request),
+            'classroom': reverse('classroom-list', request= request),
         })

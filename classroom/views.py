@@ -50,7 +50,9 @@ class ClassroomDetailUpdateApi(APIView):
 class ClassroomDetailDeleteApi(APIView):
     def delete(self, request, pk):
         classroom = Classroom.objects.get(pk=pk)
-        classroom.delete()
+        classroom.is_deleted=True
+        classroom.save()
+        # classroom.delete()
         return Response(status= status.HTTP_204_NO_CONTENT)
 
 # @api_view(['GET', 'POST'])
